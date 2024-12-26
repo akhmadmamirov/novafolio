@@ -3,7 +3,7 @@ import Projects from "./projects";
 import Blog from "./blog";
 import Contact from "./contact";
 import Experience from "./experience";
-import Main from "./home";
+import Main from "./main";
 
 export default function Home() {
   return (
