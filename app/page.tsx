@@ -3,12 +3,12 @@ import Projects from "./projects";
 import Blog from "./blog";
 import Contact from "./contact";
 import Experience from "./experience";
-import Main from "./main";
+import FirstPage from "./firstPage";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Main />
+      <FirstPage />
       <About />
       <Projects />
       <Experience />

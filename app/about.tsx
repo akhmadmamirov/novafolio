@@ -1,34 +1,46 @@
-export default function About() {
+import Interests from './interests';
+
+const About = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">About Us</h1>
+    <div className="flex flex-col md:flex-row gap-8 justify-center items-start p-10">
+      <div className="flex-1">
+        <Interests />
+      </div>
+      <div className="flex-1 text-white justify-center items-center">
+        <h2 className="mt-20 text-3xl font-bold mb-6">About Me</h2>
         
-        <div className="prose prose-lg">
-          <p className="text-gray-600 mb-6">
-            Welcome to our platform. We are dedicated to providing exceptional 
-            services and solutions to meet your needs.
-          </p>
+        <p className="mb-4">
+          I am passionate about creating innovative solutions through technology and software development. My journey in computer science has led me to explore various aspects of programming, from web development to artificial intelligence.
+        </p>
+        
+        <p className="mb-8">
+          Through my academic and personal projects, I've developed a strong foundation in both theoretical concepts and practical applications, always striving to learn and adapt to new technologies.
+        </p>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h2>
-              <p className="text-gray-600">
-                To deliver innovative solutions that empower our users and make a 
-                positive impact in their daily lives.
-              </p>
+        <h3 className="text-xl font-semibold mb-4">Relevant Coursework</h3>
+        <div className="grid grid-cols-2 gap-3">
+          {[
+            "Data Structures",
+            "Algorithms",
+            "Web Development",
+            "Database Systems",
+            "Machine Learning",
+            "Software Engineering"
+          ].map((course, index) => (
+            <div
+              key={index}
+              className="p-3 rounded-lg text-sm"
+              style={{
+                background: `linear-gradient(135deg, #FFA500, #a770ad)`
+              }}
+            >
+              {course}
             </div>
-
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Vision</h2>
-              <p className="text-gray-600">
-                To become the leading platform in our field, known for excellence, 
-                reliability, and customer satisfaction.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default About;
