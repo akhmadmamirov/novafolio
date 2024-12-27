@@ -15,7 +15,7 @@ const About = () => {
           </p>
           
           <p className="mb-8 md:pl-0 pl-4">
-            Through my academic and personal projects, I've developed a strong foundation in both theoretical concepts and practical applications, always striving to learn and adapt to new technologies.
+            Through my academic and personal projects, I&apos;ve developed a strong foundation in both theoretical concepts and practical applications, always striving to learn and adapt to new technologies.
           </p>
 
           <h3 className="text-xl font-semibold mb-4 md:pl-0 pl-4">Relevant Coursework</h3>

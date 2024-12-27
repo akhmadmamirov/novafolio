@@ -76,6 +76,7 @@ export default function Interests() {
     return () => {
       simulation.stop();
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
 
   return (
@@ -89,7 +90,7 @@ export default function Interests() {
       >
         <svg className="w-full h-full absolute">
           {bubbles.map((bubble, i) => 
-            bubbles.slice(i + 1).map((target, j) => {
+            bubbles.slice(i + 1).map((target) => {
               const distance = Math.hypot(bubble.x - target.x, bubble.y - target.y);
               return distance < 200 ? (
                 <line
