@@ -49,7 +49,7 @@ const internshipExperiences: Experience[] = [
     team: "Commerce, Identity and Security",
     logoSrc: "/ea_logo.jpg",
     logoAlt: "EA Logo",
-    images: ["/ea_sims.png", "/ea_group.jpg", "/ea_hq2.jpg", "/ea_hq.png"],
+    images: ["/ea_sims.png", "/ea_group.png", "/ea_hq2.png", "/ea_hq.png"],
     skills: ["Java", "React", "Express", "AWS", "Docker"],
   },
   {
@@ -72,7 +72,7 @@ const collegeExperiences: Experience[] = [
     company: "Google Developer Group",
     title: "Founder & Lead | Google Developer Group",
     description: "Worked on FIFA Ultimate Team",
-    images: ["/google_io.jpg", "/google_io2.jpg"],
+    images: ["/google_io.png", "/google_io2.png"],
     logoSrc: "/gdg_group.png",
     logoAlt: "Wooster Logo",
     skills: ["Flutter", "Firebase", "Google Cloud"],
