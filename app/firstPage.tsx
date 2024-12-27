@@ -72,6 +72,7 @@ const collegeExperiences: Experience[] = [
     company: "Google Developer Group",
     title: "Founder & Lead | Google Developer Group",
     description: "Worked on FIFA Ultimate Team",
+    images: ["/google_io.jpg", "/google_io2.jpg"],
     logoSrc: "/gdg_group.png",
     logoAlt: "Wooster Logo",
     skills: ["Flutter", "Firebase", "Google Cloud"],
