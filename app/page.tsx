@@ -1,11 +1,11 @@
 import About from "./about";
 import Blog from "./blog";
-import FirstPage from "./firstPage";
+import Profile from "./profile";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <FirstPage />
+      <Profile />
       <About />
       <Blog />
     </main>

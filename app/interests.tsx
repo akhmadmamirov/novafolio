@@ -1,19 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-
-interface Bubble {
-  id: number;
-  x: number;
-  y: number;
-  label: string;
-  color: string;
-  icon: string;
-  size: number;
-  fx?: number | null;
-  fy?: number | null;
-}
+import type { Bubble } from './types/components';
+import { interests } from '../data/interests';
+import './styles/interests.css';
 
 export default function Interests() {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
@@ -23,26 +14,13 @@ export default function Interests() {
     triggerOnce: false
   });
 
-  const interests = [
-    { label: "Programming", color: "#6366F1", icon: "💻", size: 100 },
-    { label: "Microservices", color: "#EC4899", icon: "🐳", size: 90 },
-    { label: "AI/ML", color: "#8B5CF6", icon: "🤖", size: 110 },
-    { label: "Cloud", color: "#10B981", icon: "🌩️", size: 85 },
-    { label: "Science", color: "#F59E0B", icon: "🔬", size: 95 },
-    { label: "Quantum", color: "#3B82F6", icon: "⚡️", size: 80 },
-    { label: "Space", color: "#6366F1", icon: "🚀", size: 105 },
-    { label: "Research", color: "#8B5CF6", icon: "📚", size: 88 }
-  ];
-
   useEffect(() => {
     if (!containerRef.current || !inView) {
       setBubbles([]);
       return;
     }
-    
     const width = containerRef.current.clientWidth;
     const height = containerRef.current.clientHeight;
-
     const simulation = d3.forceSimulation<Bubble>()
       .force('charge', d3.forceManyBody().strength(-800))
       .force('center', d3.forceCenter(width / 2, height / 2))
@@ -56,14 +34,12 @@ export default function Interests() {
     const addBubble = (index: number) => {
       const angle = Math.random() * 2 * Math.PI;
       const radius = Math.random() * 400;
-      
       const newBubble: Bubble = {
         id: index,
         x: width / 2 + radius * Math.cos(angle),
         y: height / 2 + radius * Math.sin(angle),
         ...interests[index],
       };
-      
       simulation.nodes([...simulation.nodes(), newBubble]);
       simulation.alpha(1);
       simulation.restart();
@@ -115,7 +91,6 @@ export default function Interests() {
             })
           )}
         </svg>
-        
         {bubbles.map((bubble) => (
           <div
             key={bubble.id}
@@ -141,17 +116,10 @@ export default function Interests() {
           </div>
         ))}
       </div>
-      <style jsx>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-          to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-        }
-      `}</style>
     </div>
   );
 }
 
-// Helper function to adjust color brightness
 function adjustColor(color: string, amount: number): string {
   const hex = color.replace('#', '');
   const num = parseInt(hex, 16);
