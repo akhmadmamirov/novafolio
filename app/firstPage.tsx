@@ -25,6 +25,7 @@ type Experience = {
   images?: string[];
   skills?: string[];
   team?: string;
+  location?: string;
 };
 
 // Separate experience data structures
@@ -34,8 +35,9 @@ const internshipExperiences: Experience[] = [
     endDate: "08/2025",
     company: "Salesforce",
     title: "Software Engineer",
-    description: "Public Cloud Team",
+    description: "This summer I will be joining Salesforce as a Software Engineer Intern. I will be working on Public Cloud team based in San Francisco.",
     team: "Public Cloud",
+    location: "San Francisco, CA",
     logoSrc: "/salesforce_logo.png",
     logoAlt: "Salesforce Logo",
     skills: ["Go", "K8s", "AWS", "Microservices"],
@@ -45,8 +47,9 @@ const internshipExperiences: Experience[] = [
     endDate: "08/2024",
     company: "Electronic Arts",
     title: "Software Engineer",
-    description: "Worked on Commerce, Identity and Security",
+    description: "I worked in Commerce, Identity, and Security teams. I designed new UI components and built a new server for managing and troubleshooting player information for our developers and partners. I deployed this new platform with improved access control, auditing, and extensive depth-first search capabilities.",
     team: "Commerce, Identity and Security",
+    location: "Redwood City, CA",
     logoSrc: "/ea_logo.jpg",
     logoAlt: "EA Logo",
     images: ["/ea_sims.png", "/ea_group.png", "/ea_hq2.png", "/ea_hq.png"],
@@ -57,8 +60,9 @@ const internshipExperiences: Experience[] = [
     endDate: "07/2023",
     company: "AtomRain Inc.",
     title: "Software Engineer",
-    description: "Built web applications for clients",
+    description: "I upgraded features in the Security, Payments, and Billing components of the GraphGrid Connected Data Platform at AtomRain Inc. I reduced network latency by leading updates of Node.js and React across our codebase. Additionally, I refined UI components for Amazon EC2 instance allocations and grid configurations.",
     team: "Security, Payments and Billing",
+    location: "Santa Monica, CA",
     logoSrc: "/atomrain_logo.jpeg",
     logoAlt: "Atomrain Logo",
     skills: ["JavaScript", "React", "Node.js", "Neo4j"],
@@ -67,22 +71,22 @@ const internshipExperiences: Experience[] = [
 
 const collegeExperiences: Experience[] = [
   {
-    startDate: "2021",
-    endDate: "2023",
+    startDate: "2023",
+    endDate: "Present",
     company: "Google Developer Group",
     title: "Founder & Lead | Google Developer Group",
-    description: "Worked on FIFA Ultimate Team",
+    description: "I founded and lead team of 8 students to create the first CS club in our college in collaboration with Google Developer Group. I organized events, workshops and knowledge share sessions to help students learn about Google technologies and prepare for early career opportunities.",
     images: ["/google_io.png", "/google_io2.png"],
     logoSrc: "/gdg_group.png",
     logoAlt: "Wooster Logo",
     skills: ["Flutter", "Firebase", "Google Cloud"],
   },
   {
-    startDate: "2021",
-    endDate: "2023",
+    startDate: "10/2023",
+    endDate: "05/2024",
     company: "The College of Wooster",
     title: "AI Research Assistant",
-    description: "Worked on FIFA Ultimate Team",
+    description: "I worked on a research project to start a new course on Generative AI at Wooster with Dr. Palmer. I mentored a Non-stem student on how to use Generative AI tools to build a model to identify misspelled names in a vast dataset of passenger lists and crew manifests from the French Companys ships from 1700s.",
     logoSrc: "/wooster.jpeg",
     logoAlt: "Wooster Logo",
     skills: ["Python", "TensorFlow", "PyTorch", "Computer Vision"],
@@ -145,7 +149,7 @@ export default function FirstPage() {
               <div className="mt-5 w-3 h-3 rounded-full bg-gradient-to-r from-orange-500 to-[#a770ad] mb-4"></div>
             </div>
             <p className="text-lg mb-4 bg-gradient-to-r from-orange-500 to-[#a770ad] inline-block text-transparent bg-clip-text">
-              Hi, this is Akhmad. Nice to meet you!
+              Hi, I am Akhmad. Nice to meet you!
               I love building cool stuff. I enjoy coding, reading, music and sports.
             </p>
             <div className="flex gap-4 justify-center md:justify-start">
@@ -213,6 +217,9 @@ export default function FirstPage() {
                       {experience.startDate} - {experience.endDate}
                       {experience.team && ` | ${experience.team}`}
                     </p>
+                    <p className="text-white">
+                      {experience.location && ` ${experience.location}`}
+                    </p>
                     {experience.skills && (
                       <div className="flex flex-wrap gap-2 mt-2">
                         {experience.skills.map((skill, skillIndex) => (
@@ -228,7 +235,7 @@ export default function FirstPage() {
                         ))}
                       </div>
                     )}
-                    <p className="mt-2 text-gray-600">{experience.description}</p>
+                    <p className="mt-2 text-white w-3/4">{experience.description}</p>
                     {/* Optional images section */}
                     {experience.images && experience.images.length > 0 && (
                       <div className="grid grid-cols-2 gap-2 mt-4 max-w-lg">
@@ -285,7 +292,7 @@ export default function FirstPage() {
                     </h3>
                   </div>
                   <div className="ml-16">
-                    <p className="text-orange-500">
+                    <p className="text-[#a770ad]">
                       {experience.startDate} - {experience.endDate}
                       {experience.team && ` | ${experience.team}`}
                     </p>
@@ -304,7 +311,7 @@ export default function FirstPage() {
                         ))}
                       </div>
                     )}
-                    <p className="mt-2 text-gray-600">{experience.description}</p>
+                    <p className="mt-2 text-white w-3/4">{experience.description}</p>
                     {/* Optional images section */}
                     {experience.images && experience.images.length > 0 && (
                       <div className="grid grid-cols-2 gap-2 mt-4 max-w-lg">
