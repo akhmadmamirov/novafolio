@@ -19,9 +19,9 @@ export const internshipExperiences: Experience[] = [
     endDate: "08/2024",
     company: "Electronic Arts",
     title: "Software Engineer",
-    description: `I worked in Commerce, Identity, and Security teams. 
-      I designed new UI components and built a new server for managing
-      and troubleshooting player information for our developers and partners.
+    description: `
+      I designed and built new secure APIs for managing
+      and troubleshooting player information for our developers and partners with Oauth2.
       I deployed this new platform with improved access control, auditing,
       and extensive depth-first search capabilities.`,
     team: "Commerce, Identity and Security",
@@ -53,16 +53,17 @@ export const internshipExperiences: Experience[] = [
 
 export const collegeExperiences: Experience[] = [
   {
-    startDate: "2023",
+    startDate: "08/2023",
     endDate: "Present",
     company: "Google Developer Group",
-    title: "Founder & Lead | Google Developer Group",
+    title: "Founder & Lead",
     description: `I founded and lead a team of 8 students 
       to create the first CS club in our college in collaboration
       with Google Developer Group. I organized events, workshops
       and knowledge share sessions to help students learn about Google 
       technologies and prepare for early career opportunities.`,
     images: ["/google_io.png", "/google_io2.png"],
+    location: "Wooster, OH",
     logoSrc: "/gdg_group.png",
     logoAlt: "Wooster Logo",
     skills: ["Flutter", "Firebase", "Google Cloud"],
@@ -78,9 +79,10 @@ export const collegeExperiences: Experience[] = [
       student on how to use Generative AI tools to build a model to identify
       misspelled names in a vast dataset of passenger lists and crew manifests
       from the French Companys ships from 1700s.`,
+    location: "Wooster, OH",
     logoSrc: "/wooster.jpeg",
     logoAlt: "Wooster Logo",
-    skills: ["Python", "TensorFlow", "PyTorch", "Computer Vision"],
+    skills: ["Python", "TensorFlow", "PyTorch", "Langchain"],
     type: "college",
   },
 ];
