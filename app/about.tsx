@@ -1,5 +1,3 @@
-import Interests from './interests';
-import Donut from './donut';
 import SpinningCPU from './cpu';
 const About = () => {
   return (
@@ -7,7 +5,6 @@ const About = () => {
       <div className="flex-1">
         <div className="p-20">
           <SpinningCPU />
-          {/* <Donut /> */}
         </div>
       </div>
       <div className="flex-1 text-white">

@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 
 const SpinningCPU = () => {
   const [rotation, setRotation] = useState(0);
-  const width = 40;    // Reduced from 80
-  const height = 15;   // Reduced from 30
-  const depth = 3;     // Reduced from 6
+  const width = 40;    
+  const height = 15;  
+  const depth = 3;     
   
   const drawRectangle = (
     points: string[][],
@@ -40,10 +40,10 @@ const SpinningCPU = () => {
     cols: number,
     rows: number
   ) => {
-    const transistorWidth = 2;  // Reduced from 3
-    const transistorHeight = 1; // Reduced from 2
-    const spacingX = 3;        // Reduced from 4
-    const spacingY = 2;        // Reduced from 3
+    const transistorWidth = 2;  
+    const transistorHeight = 1; 
+    const spacingX = 3;        
+    const spacingY = 2;        
 
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
