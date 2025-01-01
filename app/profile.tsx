@@ -14,7 +14,7 @@ export default function Profile() {
         <div className="flex flex-col gap-12 mt-16 w-full max-w-4xl">
           <div>
             <h2 className={`text-2xl font-bold mb-8 animate-fade-in-up delay-2 ${sourceCodePro.className}`}>
-              My Prior Internship Experience
+              My Prior Internship Experience:
             </h2>
             <Experience data={internshipExperiences} />
             <h2 className={`text-2xl font-bold mt-16 mb-8 animate-fade-in-up delay-3  ${sourceCodePro.className}`}>

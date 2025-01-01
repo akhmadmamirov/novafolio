@@ -6,7 +6,7 @@ import { profile, socials } from '../data/profile';
 export default function Header() {
   return (
     <div className="flex flex-col md:flex-row items-start gap-20 max-w-4xl w-full">
-    <div className="w-48 h-48 relative animate-fade-in-up">
+    <div className="w-48 h-48 relative animate-fade-in-up shrink-0">
       <Image
         src={profile.image}
         alt="Profile picture"
