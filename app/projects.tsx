@@ -1,50 +1,14 @@
 "use client";
 import React from 'react';
-
-interface Project {
-  id: number;
-  name: string;
-  description: string;
-  link: string;
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    name: "AI Analytics Dashboard",
-    description: "Real-time machine learning analytics platform",
-    link: "https://example.com/ai-dashboard"
-  },
-  {
-    id: 2,
-    name: "Cloud Migration Tool",
-    description: "Enterprise cloud infrastructure migration suite",
-    link: "https://example.com/cloud-migration"
-  },
-  {
-    id: 3,
-    name: "IoT Monitoring System",
-    description: "Smart device monitoring and management",
-    link: "https://example.com/iot-monitoring"
-  },
-  {
-    id: 4,
-    name: "Blockchain Wallet",
-    description: "Secure cryptocurrency wallet application",
-    link: "https://example.com/blockchain-wallet"
-  },
-  {
-    id: 5,
-    name: "AR Navigation App",
-    description: "Augmented reality indoor navigation",
-    link: "https://example.com/ar-navigation"
-  }
-];
+import { projects } from "../data/projects"
 
 const Projects: React.FC = () => {
   return (
     <div className="w-full py-8">
-      <h2 className="text-3xl font-bold mb-6 text-center">Pet Projects</h2>
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <h2 className="text-3xl font-bold">Pet Projects</h2>
+          <img className='w-10 h-10' src='cat.png' alt="cat" />
+        </div>
       <div className="max-w-2xl mx-auto space-y-4">
         {projects.map((project) => (
           <a

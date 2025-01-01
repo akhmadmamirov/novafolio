@@ -45,3 +45,4 @@ export type Interests = {
   icon: string;
   size: number;
 }
+
