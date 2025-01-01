@@ -1,21 +1,25 @@
 import Interests from './interests';
-
+import Donut from './donut';
+import SpinningCPU from './cpu';
 const About = () => {
   return (
     <div className="flex flex-col md:flex-row gap-8 justify-center items-start p-10">
       <div className="flex-1">
-        <Interests />
+        <div className="p-20">
+          <SpinningCPU />
+          {/* <Donut /> */}
+        </div>
       </div>
       <div className="flex-1 text-white">
         <div className="w-4/5">
           <h2 className="mt-20 text-3xl font-bold mb-6 md:pl-0 pl-4">About Me</h2>
           
           <p className="mb-4 md:pl-0 pl-4">
-            I am passionate about creating innovative solutions through technology and software development. My journey in computer science has led me to explore various aspects of programming, from web development to artificial intelligence.
+            I enjoy learning and being part of the latest in tech. My goal is to build ventures in Robotics, AI & Cancer Research, Quantum Computing, High-performance Computing, Rockets, Space and Neuroscience.
           </p>
           
           <p className="mb-8 md:pl-0 pl-4">
-            Through my academic and personal projects, I&apos;ve developed a strong foundation in both theoretical concepts and practical applications, always striving to learn and adapt to new technologies.
+            I am always amazed by the world around us: our environment, our communication, and our understanding of technology. 
           </p>
 
           <h3 className="text-xl font-semibold mb-4 md:pl-0 pl-4">Relevant Coursework</h3>

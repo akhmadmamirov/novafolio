@@ -20,7 +20,7 @@ export const internshipExperiences: Experience[] = [
     company: "Electronic Arts",
     title: "Software Engineer",
     description: `
-      I designed and built new secure APIs for managing
+      I designed and built new, secure APIs for managing
       and troubleshooting player information for our developers and partners with Oauth2.
       I deployed this new platform with improved access control, auditing,
       and extensive depth-first search capabilities.`,
@@ -58,7 +58,7 @@ export const collegeExperiences: Experience[] = [
     company: "Google Developer Group",
     title: "Founder & Lead",
     description: `I founded and lead a team of 8 students 
-      to create the first CS club in our college in collaboration
+      to create the first CS club at our college in collaboration
       with Google Developer Group. I organized events, workshops
       and knowledge share sessions to help students learn about Google 
       technologies and prepare for early career opportunities.`,
