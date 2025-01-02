@@ -161,7 +161,7 @@ const SpinningCPU = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full min-h-[200px] p-8">
-  <div className="bg-black rounded-lg p-6 shadow-lg">
+  <div className="rounded-lg p-6 shadow-lg">
     <pre className="font-mono text-green-500 leading-none">
       {points.map((row, i) => (
         <div key={i} className="whitespace-pre">
@@ -171,7 +171,7 @@ const SpinningCPU = () => {
     </pre>
   </div>
   <div className="text-green-500 font-mono mt-4">
-    Jupyter M1 TPU
+    My super duper CPU
   </div>
 </div>
   );

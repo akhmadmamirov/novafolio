@@ -3,32 +3,26 @@ import type { Projects } from "../app/types/components";
 export const projects: Projects[] = [
   {
     id: 1,
-    name: "AI Analytics Dashboard",
-    description: "Real-time machine learning analytics platform",
-    link: "https://example.com/ai-dashboard"
+    name: "Ticketmaster - Microservices",
+    description: "Buy and sell tickets scaled with distributed systems",
+    link: "https://github.com/akhmadmamirov/ticketshow"
   },
   {
     id: 2,
-    name: "Cloud Migration Tool",
-    description: "Enterprise cloud infrastructure migration suite",
-    link: "https://example.com/cloud-migration"
+    name: "WooChat",
+    description: "Chatbot for the College of Wooster website",
+    link: "https://github.com/akhmadmamirov/WooChat"
   },
   {
     id: 3,
-    name: "IoT Monitoring System",
-    description: "Smart device monitoring and management",
-    link: "https://example.com/iot-monitoring"
+    name: "Course System",
+    description: "Backend for online course registration",
+    link: "https://github.com/akhmadmamirov/DevCamper"
   },
   {
     id: 4,
-    name: "Blockchain Wallet",
-    description: "Secure cryptocurrency wallet application",
+    name: "Apple Product Support",
+    description: "Website for customer support for Apple products",
     link: "https://example.com/blockchain-wallet"
   },
-  {
-    id: 5,
-    name: "AR Navigation App",
-    description: "Augmented reality indoor navigation",
-    link: "https://example.com/ar-navigation"
-  }
 ];
