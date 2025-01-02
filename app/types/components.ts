@@ -45,3 +45,12 @@ export type Interests = {
   icon: string;
   size: number;
 }
+
+export type Projects = {
+  id: number;
+  name: string;
+  description: string;
+  link: string;
+}
+
+

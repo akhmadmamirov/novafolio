@@ -52,7 +52,6 @@ export default function Interests() {
     return () => {
       simulation.stop();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
 
   return (
