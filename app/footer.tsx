@@ -1,4 +1,4 @@
-export const Footer = ()  =>{
+export default function Footer () {
   return (
     <footer className="w-full py-8 mt-8">
       <div 
@@ -7,7 +7,7 @@ export const Footer = ()  =>{
           background: 'linear-gradient(to right, orange, #a770ad)'
         }}
       />
-      <div className="text-center space-y-2">
+      <div className="text-center space-y-2 mt-7">
       <p className="text-lg font-semibold font-mono">
           Created by{' '}
           <span 
@@ -23,7 +23,7 @@ export const Footer = ()  =>{
           </span>
         </p>
         <p className="text-sm text-white font-medium font-mono">
-          Last updated: Jan 1, 2025
+          Last updated: Jan 2, 2025
         </p>
       </div>
     </footer>

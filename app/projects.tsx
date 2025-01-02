@@ -2,7 +2,8 @@
 import React from 'react';
 import { projects } from "../data/projects"
 import Image from 'next/image';
-const Projects: React.FC = () => {
+
+export default function Projects () {
   return (
     <div className="w-full mb-8">
         <div className="flex items-center justify-center gap-4 mb-6">
@@ -37,5 +38,4 @@ const Projects: React.FC = () => {
   );
 };
 
-export default Projects;
 

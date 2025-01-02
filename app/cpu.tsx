@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 
-const SpinningCPU = () => {
+export default function SpinningCPU () {
   const [rotation, setRotation] = useState(0);
   const width = 40;    
   const height = 15;  
@@ -177,4 +177,3 @@ const SpinningCPU = () => {
   );
 };
 
-export default SpinningCPU;

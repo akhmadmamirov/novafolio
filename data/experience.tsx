@@ -72,7 +72,6 @@ export const collegeExperiences: Experience[] = [
   {
     startDate: "10/2023",
     endDate: "05/2024",
-    company: "The College of Wooster",
     title: "AI Research Assistant",
     description: `I worked on a research project to start a new course
       on Generative AI at Wooster with Dr. Palmer. I mentored a Non-stem
@@ -82,7 +81,7 @@ export const collegeExperiences: Experience[] = [
     location: "Wooster, OH",
     logoSrc: "/wooster.jpeg",
     logoAlt: "Wooster Logo",
-    skills: ["Python", "TensorFlow", "PyTorch", "Langchain"],
+    skills: ["Python", "TensorFlow", "Langchain"],
     type: "college",
   },
 ];
