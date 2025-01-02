@@ -1,15 +1,11 @@
-import About from "./about";
-import Blog from "./blog";
-import Profile from "./profile";
-import Projects from "./projects";
 
+import { Footer } from "./footer";
+import Profile from "./profile";
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Profile />
-      <About />
-      <Projects />
-      <Blog />
+      <Footer />
     </main>
   );
 }
