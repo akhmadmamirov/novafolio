@@ -3,7 +3,7 @@ import SpinningCPU from './cpu';
 import { courseWork, aboutMe } from '@/data/about';
 import { sourceCodePro } from './utils/fonts';
 
-const About = () => {
+export const About = () => {
   return (
     <div className="flex flex-col md:flex-row gap-8 justify-center items-start p-10">
       <div className="flex-1">
@@ -41,5 +41,3 @@ const About = () => {
     </div>
   );
 };
-
-export default About;
