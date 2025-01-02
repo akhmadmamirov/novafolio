@@ -5,17 +5,15 @@ import { IoLocationOutline } from 'react-icons/io5'
 export default function Experience({ data }: { data: Experience[] }) {
 return (
   <div>
-    <div className="relative flex flex-col gap-16">
-        <div 
-        className="absolute left-4 w-0.5 bg-gray-200 h-full timeline-line"
-      />
+    <div className="relative flex flex-col gap-16 experience-card">
+      <div className="absolute left-4 w-0.5 bg-gray-200 h-full timeline-line"/>
       {data.map((experience: Experience, index: number) => (
         <div 
           key={index} 
           className={`relative pl-8 animate-fade-in-up delay-${index + 2}`}
         >
-          <div className="flex items-center gap-4">
-            <div className="absolute left-[-85px] w-20 text-right">
+          <div className="flex items-center gap-4 experience-header">
+            <div className="absolute left-[-85px] w-20 text-right start-date">
               <p className={`${experience.type === 'college' ? 'text-[#a770ad]' : 'text-orange-500'} text-base font-semibold font-mono`}>
                 {experience.startDate} - {experience.endDate}
               </p>
@@ -31,8 +29,8 @@ return (
                 className="rounded-full object-contain"
               />
             </div>
-            <h3 className="font-semibold text-xl">
-              {experience.title} @ {experience.company}
+            <h3 className="font-semibold text-xl experience-title">
+              {experience.title}{experience.company ? ` @ ${experience.company}` : ''}
             </h3>
           </div>
           <div className="ml-16">
@@ -41,7 +39,8 @@ return (
                 {experience.team} 
               </p>
               <p className="text-white flex items-center gap-1">
-                | <IoLocationOutline className="text-blue-500 inline" /> {experience.location && <span className="text-blue-500">{experience.location}</span>}
+                {experience.team && '| '}
+                <IoLocationOutline className="text-blue-500 inline" /> {experience.location && <span className="text-blue-500">{experience.location}</span>}
               </p>
             </div>
             {experience.skills && (
@@ -61,7 +60,7 @@ return (
                 ))}
               </div>
             )}
-            <p className="mt-2 text-gray-300 w-3/4 text-base leading-relaxed font-normal">
+            <p className="mt-2 text-gray-300 w-3/4 text-base leading-relaxed font-normal experience-description">
               {experience.description}
             </p>
             {/* Optional images section */}

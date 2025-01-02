@@ -3,7 +3,7 @@ import type { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 export type Experience = {
   startDate: string;
   endDate: string;
-  company: string;
+  company?: string;
   title: string;
   description: string;
   logoSrc: string;
