@@ -46,3 +46,11 @@ export type Interests = {
   size: number;
 }
 
+export type Projects = {
+  id: number;
+  name: string;
+  description: string;
+  link: string;
+}
+
+

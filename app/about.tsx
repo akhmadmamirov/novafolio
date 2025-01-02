@@ -20,7 +20,7 @@ const About = () => {
           <p className="font-mono mb-8 md:pl-0 pl-4">
            {aboutMe[1]}
           </p>
-          <h3 className="text-xl font-semibold mb-4 md:pl-0 pl-4">Relevant Coursework</h3>
+          <h3 className="text-xl font-semibold font-mono mb-4 md:pl-0 pl-4">Relevant Coursework</h3>
           <div className="flex flex-wrap gap-3 md:pl-0 pl-4">
             {courseWork.map((course, index) => (
               <button

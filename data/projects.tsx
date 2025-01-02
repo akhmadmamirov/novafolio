@@ -23,6 +23,6 @@ export const projects: Projects[] = [
     id: 4,
     name: "Apple Product Support",
     description: "Website for customer support for Apple products",
-    link: "https://example.com/blockchain-wallet"
+    link: "https://github.com/akhmadmamirov/Apple-Product-Support"
   },
 ];

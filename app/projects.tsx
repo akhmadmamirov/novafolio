@@ -1,13 +1,21 @@
 "use client";
 import React from 'react';
 import { projects } from "../data/projects"
-
+import Image from 'next/image';
 const Projects: React.FC = () => {
   return (
-    <div className="w-full py-8">
+    <div className="w-full mb-8">
         <div className="flex items-center justify-center gap-4 mb-6">
           <h2 className="text-3xl font-bold">Pet Projects</h2>
-          <img className='w-10 h-10' src='cat.png' alt="cat" />
+          <div className='w-10 h-10 relative'>
+            <Image
+              src='/cat.png'
+              alt='cat'
+              layout='fill'
+              objectFit='cover'
+              className='rounded-full' // example of additional styling
+            />
+          </div>
         </div>
       <div className="max-w-2xl mx-auto space-y-4">
         {projects.map((project) => (
