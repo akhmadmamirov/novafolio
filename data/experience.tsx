@@ -21,7 +21,7 @@ export const internshipExperiences: Experience[] = [
     title: "Software Engineer",
     description: `
       I designed and built new, secure APIs for managing
-      and troubleshooting player information for our developers and partners with Oauth2.
+      and troubleshooting player information for our developers and partners.
       I deployed this new platform with improved access control, auditing,
       and extensive depth-first search capabilities.`,
     team: "Commerce, Identity and Security",
@@ -75,7 +75,7 @@ export const collegeExperiences: Experience[] = [
     title: "AI Research Assistant",
     description: `I worked on a research project to start a new course
       on Generative AI at Wooster with Dr. Palmer. I mentored a Non-stem
-      student on how to use Generative AI tools to build a model to identify
+      student on how to use Generative AI tools to independently build a model to identify
       misspelled names in a vast dataset of passenger lists and crew manifests
       from the French Companys ships from 1700s.`,
     location: "Wooster, OH",
