@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
+const postsRouter = require('./posts')
+
 app.use(express.json());
+
+app.use('/api', postsRouter)
 
 app.get('/', async (req, res) => {
   res.status(200).send('Success');
