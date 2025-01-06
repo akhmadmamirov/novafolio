@@ -39,13 +39,6 @@ export interface Bubble {
   fy?: number | null;
 }
 
-export type Interests = {
-  label: string;
-  color: string;
-  icon: string;
-  size: number;
-}
-
 export type Projects = {
   id: number;
   name: string;

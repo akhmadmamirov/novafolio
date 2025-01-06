@@ -1,4 +1,4 @@
-export default function Footer () {
+const Footer = () => {
   return (
     <footer className="w-full py-8 mt-8">
       <div 
@@ -23,10 +23,11 @@ export default function Footer () {
           </span>
         </p>
         <p className="text-sm text-white font-medium font-mono">
-          Last updated: Jan 2, 2025
+          Last updated: Jan 6, 2025
         </p>
       </div>
     </footer>
   );
 };
 
+export default Footer;

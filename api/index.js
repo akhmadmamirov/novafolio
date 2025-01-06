@@ -1,13 +1,15 @@
-const express = require('express');
+import express from 'express';
+import { postsRouter } from './posts.js';
+
 const app = express();
-const postsRouter = require('./posts')
+
 
 app.use(express.json());
 
 app.use('/api', postsRouter)
 
 app.get('/', async (req, res) => {
-  res.status(200).send('Success');
+  res.status(200).send(`Success`);
 });
 
 // Start the server

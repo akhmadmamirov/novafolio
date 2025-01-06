@@ -1,5 +1,6 @@
-const admin = require('firebase-admin');
-require('dotenv').config();
+import admin from 'firebase-admin';
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 admin.initializeApp({
   credential: admin.credential.cert({
@@ -10,4 +11,4 @@ admin.initializeApp({
 });
 
 const db = admin.firestore();
-module.exports = { db };
+export { db };
