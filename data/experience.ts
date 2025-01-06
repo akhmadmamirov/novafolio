@@ -1,4 +1,4 @@
-import type { Experience } from "../app/types/components";
+import type { Experience } from "../utils/types/components";
 export const internshipExperiences: Experience[] = [
   {
     startDate: "05/2025",

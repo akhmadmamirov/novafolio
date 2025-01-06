@@ -1,9 +1,9 @@
-import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { sourceCodePro } from './utils/fonts';
-import { profile, socials } from '../data/profile';
+import { sourceCodePro } from '@/utils/fonts';
+import { profile, socials } from '@/data/profile';
+import Image from 'next/image'
 
-export default function Header() {
+const Header = () => {
   return (
     <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-20 max-w-4xl w-full">
     <div className="w-48 h-48 relative animate-fade-in-up shrink-0">
@@ -11,6 +11,7 @@ export default function Header() {
         src={profile.image}
         alt="Profile picture"
         fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="object-cover rounded-2xl"
         priority
       />
@@ -41,3 +42,5 @@ export default function Header() {
   </div>
   )
 }
+
+export default Header;

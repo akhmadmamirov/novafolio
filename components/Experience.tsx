@@ -1,10 +1,10 @@
-import type { Experience } from "./types/components";
-import Image from 'next/image'
+import type { Experience } from "@/utils/types/components";
 import { IoLocationOutline } from 'react-icons/io5'
+import Image from 'next/image'
 
-export default function Experience({ data }: { data: Experience[] }) {
+const Experience = ({ data }: { data: Experience[] }) => {
 return (
-  <div>
+  <div className="experiences">
     <div className="relative flex flex-col gap-16 experience-card">
       <div className="absolute left-4 w-0.5 bg-gray-200 h-full timeline-line"/>
       {data.map((experience: Experience, index: number) => (
@@ -26,6 +26,7 @@ return (
                 src={experience.logoSrc}
                 alt={experience.logoAlt}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="rounded-full object-contain"
               />
             </div>
@@ -72,6 +73,7 @@ return (
                       src={image}
                       alt={`${experience.company} project image ${imageIndex + 1}`}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover rounded-lg"
                     />
                   </div>
@@ -85,3 +87,5 @@ return (
   </div>
 )
 }
+
+export default Experience;

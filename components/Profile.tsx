@@ -1,12 +1,11 @@
 "use client";
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import './styles/experience.css'
-import { sourceCodePro } from './utils/fonts';
+import { sourceCodePro } from '@/utils/fonts';
 import { internshipExperiences, collegeExperiences } from '../data/experience';
-import Experience from './experience';
-import Header from './header';
+import Experience from '@/components/Experience';
+import Header from '@/components/Header';
 
-export default function Profile() {
+const Profile = () => {
   return (
     <>
       <main className="min-h-screen flex flex-col items-center pt-24 px-4 sm:px-8">
@@ -27,5 +26,6 @@ export default function Profile() {
     </>
   );
 }
+export default Profile;
 
 

@@ -1,4 +1,4 @@
-import type { Projects } from "../app/types/components";
+import type { Projects } from "../utils/types/components";
 
 export const projects: Projects[] = [
   {
