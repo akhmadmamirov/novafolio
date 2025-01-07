@@ -46,4 +46,13 @@ export type Projects = {
   link: string;
 }
 
+export type Testimonial = {
+  id: number;
+  name: string;
+  role: string;
+  comment: string;
+  category: string;
+  logo : string;
+}
+
 
