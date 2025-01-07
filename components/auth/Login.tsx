@@ -15,7 +15,8 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, password);
       toast.success('Login successful!');
       router.push('/admin'); 
-    } catch (error: any) {
+    } catch (error) {
+      console.log(error)
       toast.error('Wrong email or password.');
       setEmail("")
       setPassword("")
