@@ -4,6 +4,7 @@ import { sourceCodePro } from '@/utils/fonts';
 import { internshipExperiences, collegeExperiences } from '../data/experience';
 import Experience from '@/components/Experience';
 import Header from '@/components/Header';
+import Feedback from './Feedback';
 
 const Profile = () => {
   return (
@@ -16,6 +17,7 @@ const Profile = () => {
               My Prior Internship Experience:
             </h2>
             <Experience data={internshipExperiences} />
+            <Feedback />
             <h2 className={`text-2xl font-bold mt-16 mb-8 animate-fade-in-up delay-3  ${sourceCodePro.className}`}>
               @ The College of Wooster
             </h2>
