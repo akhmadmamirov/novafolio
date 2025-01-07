@@ -3,6 +3,7 @@ import { Lora } from 'next/font/google';
 import Head from 'next/head';
 import "../styles/global.css"
 import '@/styles/experience.css'
+import { ToastContainer } from 'react-toastify';
 
 const lora = Lora({ subsets: ['latin'] });
 
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <div className={lora.className}>
         <Component {...pageProps} />
+        <ToastContainer />
       </div>
     </>
   );

@@ -1,46 +1,35 @@
-// AdminEditor.tsx
-import { useEffect, useState } from 'react';
+import { withAuth } from "@/components/auth/Protect";
+import { useRouter } from 'next/navigation';
 import { auth } from '@/firebaseConfig';
-import { onAuthStateChanged } from 'firebase/auth';
-import useAdminCheck from '@/components/auth/CheckAdmin';
-import { User } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 const AdminEditor = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-  const isAdmin = useAdminCheck(user?.uid || '');
+  const router = useRouter();
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-      } else {
-        setUser(null);
-      }
-      setLoading(false);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!user) {
-    return <div>Please log in to access the editor.</div>;
-  }
-
-  if (!isAdmin) {
-    return <div>You do not have admin access.</div>;
-  }
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();
+      toast.success('Logged out successfully');
+      router.push('/login');
+    } catch (error) {
+      toast.error('Error logging out');
+    }
+  };
 
   return (
-    <div>
-      <h1>Admin Editor</h1>
+    <div className="p-4">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">Admin Editor</h1>
+        <button
+          onClick={handleLogout}
+          className="px-4 py-2 font-bold text-white bg-red-500 rounded-lg hover:bg-red-600 focus:ring-4 focus:ring-red-300 focus:outline-none"
+        >
+          Logout
+        </button>
+      </div>
       {/* Admin editor content goes here */}
     </div>
   );
 };
 
-export default AdminEditor;
+export default withAuth(AdminEditor);

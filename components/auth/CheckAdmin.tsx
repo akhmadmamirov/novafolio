@@ -19,7 +19,6 @@ const useAdminCheck = (userId: string) => {
       checkAdmin();
     }
   }, [userId]);
-
   return isAdmin;
 };
 
