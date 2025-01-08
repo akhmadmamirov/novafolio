@@ -6,7 +6,7 @@ export const profile: Profile = {
   description: `Hi, I am Akhmad. Nice to meet you! I enjoy coding, reading, 
   music and sports. Currently, I am doing my research in optimizing workload
   schedulling on DPUs. In my next role, I want to work on backend, distributed
-  systems, compilers, AI, Cloud and Quantum Computing projects.`,
+  systems, compilers, AI, cloud and quantum computing projects.`,
   image: "/profile.png",
 }
 

@@ -37,7 +37,7 @@ const Feedback = () => {
       >
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="w-full flex-shrink-0">
-            <div className="card bg-base-300 shadow-xl w-full">
+            <div className="card shadow-xl w-full">
               <div className="card-body p-6">
                 <div className="flex justify-center mb-4">
                   <span
@@ -50,7 +50,7 @@ const Feedback = () => {
                   </span>
                 </div>
                 <p className="text-lg font-light italic mb-4">
-                  {testimonial.comment}
+                  &quot;{testimonial.comment}&quot;
                 </p>
                 <div className="flex flex-col">
                   <span className="text-primary font-semibold">

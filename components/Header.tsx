@@ -18,11 +18,11 @@ const Header = () => {
     </div>
     <div className="text-center md:text-left animate-fade-in-up delay-1">
       <div className="flex flex-col items-center md:items-start gap-2">
-        <h1 className={`text-4xl font-bold mb-4 ${sourceCodePro.className}`}>
-          {profile.name} 
+        <h1 className={`bg-gradient-to-r from-orange-500 to-[#a770ad] text-4xl font-bold mb-4 ${sourceCodePro.className}`}>
+          {profile.name}. 
         </h1>
       </div>
-      <p className="text-lg mb-4 bg-gradient-to-r from-orange-500 to-[#a770ad] inline-block text-transparent bg-clip-text">
+      <p className="text-lg mb-4 bg-white inline-block text-transparent bg-clip-text">
         {profile.description}
       </p>
       <div className="flex gap-4 justify-center md:justify-start">
@@ -34,7 +34,7 @@ const Header = () => {
             rel="noopener noreferrer"
             className="text-2xl hover:opacity-80 transition-opacity"
           >
-            <FontAwesomeIcon icon={social.icon} />
+            <FontAwesomeIcon icon={social.icon} className="text-green-400" />
           </a>
         ))}
       </div>

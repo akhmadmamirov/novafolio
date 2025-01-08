@@ -22,7 +22,7 @@ export const testimonials : Testimonial[] = [
     id: 3,
     name: "Qijun Feng",
     role: "Hiring Manager at EA",
-    comment: "You are one of the best interns I had in my career. You are very fast at learning new things",
+    comment: "You are one of the best interns I had in my career. You are very fast at learning new things.",
     category: "Leadership",
     logo: "ea_logo2.png"
   },
