@@ -55,4 +55,19 @@ export type Testimonial = {
   logo : string;
 }
 
+type Post = {
+  title: string;
+  content: string;
+  imageURL: string;
+  createdAt: string;
+  published: boolean;
+  slug: string;
+  tags: string[];
+  updatedAt: string;
+  thumbNail: string;
+};
+
+export type Posts = Post[];
+
+
 
