@@ -1,11 +1,15 @@
 import { useRouter } from "next/router";
 import { posts } from "@/data/posts";
 import Image from "next/image";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 const PostDetails: React.FC = () => {
   const router = useRouter();
   const { slug } = router.query;
   const post = posts.find((p) => p.slug === slug);
+  const onClick = () => {
+    router.push("/")
+  }
 
   if (!post) {
     return <div className="text-center text-gray-300">Post not found.</div>;
@@ -27,20 +31,27 @@ const PostDetails: React.FC = () => {
   return (
     <article className="max-w-4xl mx-auto p-6 text-gray-100">
       {/* Header Section */}
-      <div className="mb-8">
+      <button 
+              onClick={onClick}
+              className="inline-flex items-center space-x-2 text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200 mr-2"
+            >
+              <FaLongArrowAltLeft className="w-3 h-3" />
+              <span>Back to the main</span>
+          </button>
+      <div className="mb-8 mt-3">
+        <h1 className="text-4xl font-bold mb-4 leading-tight">
+          {post.title}
+        </h1>
         <div className="flex gap-2 mb-4">
           {post.tags.map((tag, index) => (
             <span
               key={index}
-              className="px-3 py-1 text-sm bg-gray-700 rounded-full text-gray-300"
+              className="px-3 py-1  text-sm bg-gray-700 rounded-full text-gray-300"
             >
               {tag}
             </span>
           ))}
         </div>
-        <h1 className="text-4xl font-bold mb-4 leading-tight">
-          {post.title}
-        </h1>
         <div className="flex items-center gap-4 text-gray-400 text-sm">
           <time dateTime={post.createdAt}>
             {formatDate(post.createdAt)}
