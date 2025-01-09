@@ -27,7 +27,7 @@ const Experience = ({ data }: { data: Experience[] }) => {
   }, []);
 
   return (
-    <div className="experiences">
+    <div className="experiences mb-10">
       <div className="relative flex flex-col gap-16 experience-card">
         <div className="absolute left-4 w-0.5 bg-gray-200 timeline-line" />
         {data.map((experience: Experience, index: number) => (
