@@ -12,7 +12,7 @@ export const posts : Posts = [
     "createdAt": "2025-01-01T10:00:00Z",
     "published": true,
     "slug": "ea-swe-internship",
-    "tags": ["internship", "experience", "LLM"],
+    "tags": ["Internship", "Experience", "Learning"],
     "updatedAt": "2025-01-05T14:30:00Z",
     "thumbNail": "/ea_group.png"
   },

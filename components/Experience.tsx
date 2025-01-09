@@ -16,7 +16,7 @@ const Experience = ({ data }: { data: Experience[] }) => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     experienceRefs.current.forEach((ref) => {

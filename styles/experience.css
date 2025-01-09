@@ -1,6 +1,10 @@
 @keyframes growLine {
-  from { height: 0; }
-  to { height: 100%; }
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
 }
 
 @keyframes fadeInUp {
@@ -17,7 +21,7 @@
 .experience-item {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 2.2s ease-out;
+  transition: all 1.2s ease-out;
 }
 
 .experience-item.visible {
@@ -57,7 +61,7 @@
   .experience-card {
     padding-right: 30px;
   }
-  
+
   .start-date {
     position: relative;
     left: auto;
@@ -65,17 +69,17 @@
     text-align: left;
     order: 1;
   }
-  
+
   .experience-header {
     display: flex;
     flex-direction: column;
     text-align: center;
   }
-  
+
   .experience-title {
     order: 2;
   }
-  
+
   .experience-description {
     width: 100%;
     padding-right: 10px;
