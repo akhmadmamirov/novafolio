@@ -4,29 +4,6 @@ import { db } from './firebase.js';
 
 const router = express.Router();
 
-// Middleware to verify admin
-const verifyAdmin = async (req, res, next) => {
-  try {
-    const authHeader = req.headers.authorization;
-    if (!authHeader?.startsWith('Bearer ')) {
-      return res.status(401).json({ error: 'No token provided' });
-    }
-    const token = authHeader.split('Bearer ')[1];
-    const decodedToken = await admin.auth().verifyIdToken(token);
-    console.log(decodedToken)
-
-    // Check if the UID matches your admin UID
-    if (decodedToken.uid !== process.env.ADMIN_UID) {
-      return res.status(403).json({ error: 'Not authorized' });
-    }
-    
-    next();
-  } catch (error) {
-    console.log(error)
-    res.status(401).json({ error: 'Invalid token' });
-  }
-};
-
 // Create a new post
 router.post('/posts', async (req, res) => {
   try {
