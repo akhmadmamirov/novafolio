@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '@/firebaseConfig';
+import { useFirebase } from '../hooks/hooks';
 
 
 const useAdminCheck = (userId: string) => {
   const [isAdmin, setIsAdmin] = useState(false);
-
+  const {db} = useFirebase()
   useEffect(() => {
     const checkAdmin = async () => {
       const docRef = doc(db, 'users', userId);

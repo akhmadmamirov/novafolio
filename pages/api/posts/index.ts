@@ -1,19 +1,67 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/firebaseConfig";
-import type { Post } from "@/utils/types/components";
+import { initializeFirebaseAdmin } from "../firebase-admin";
+import admin from "firebase-admin"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+ if (req.method === "GET") {
   try {
-    const posts: any[] = [];
-    const postsSnapshot = await getDocs(collection(db, "posts"));
-    
-    postsSnapshot.forEach((doc) => {
+    const { adminDb } = initializeFirebaseAdmin();
+    const postsSnapshot = await adminDb.collection('posts')
+      .orderBy('createdAt', 'desc')
+      .get();
+
+    const posts : any = [];
+    postsSnapshot.forEach(doc => {
       posts.push({ id: doc.id, ...doc.data() });
     });
-    res.status(200).json(posts);
-  } catch (error) {
-    console.error("Error fetching posts:", error);
-    res.status(500).send("Internal error");
+    res.json(posts);
+    } catch (error : any) {
+    console.log(error)
+    res.status(500).send(error.message);
   }
+}
+if (req.method === "POST"){
+  const { adminDb } = initializeFirebaseAdmin();
+  try {
+    const { title, content, imageUrls = [], tags = [] } = req.body;
+    if (!title || !content) {
+      return res.status(400).json({ error: 'Title and content are required' });
+    }
+    const slug = title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+
+    const postData = {
+      title,
+      slug,
+      content,
+      imageUrls,
+      tags,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+      published: false 
+    };
+
+    // Check if slug already exists
+    const existing = await adminDb.collection('posts')
+      .where('slug', '==', slug)
+      .get();
+    
+    if (!existing.empty) {
+      return res.status(400).json({ error: 'A post with this title already exists' });
+    }
+
+    const docRef = await adminDb.collection('posts').add(postData);
+    res.status(201).json({ 
+      id: docRef.id,
+      ...postData,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    });
+  } catch (error) {
+    console.error('Error creating post:', error);
+    res.status(500).json({ error: 'Failed to create post' });
+  }
+ }
 }

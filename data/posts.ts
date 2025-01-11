@@ -1,6 +1,6 @@
 import Posts from "@/components/Posts"
 
-export const posts : Posts = [
+export const posts  = [
   {
     "title": "SWE Internship at EA",
     "content": `
