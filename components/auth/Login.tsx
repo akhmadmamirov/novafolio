@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useFirebase } from '../hooks/hooks';
+import { UseFirebase } from '../hooks/hooks';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 
 const Login = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const {auth} = useFirebase()
+  const {auth} = UseFirebase()
   const router = useRouter(); 
 
   const handleLogin = async (e: React.FormEvent) => {

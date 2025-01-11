@@ -1,6 +1,6 @@
 import { initializeFirebaseClient } from '../../firebaseConfig';
 
-export const useFirebase = () => {
-  const { app, auth, db } = initializeFirebaseClient();
-  return { app, auth, db };
+export const UseFirebase = () => {
+  const { app, auth, db, storage } = initializeFirebaseClient();
+  return { app, auth, db, storage };
 };

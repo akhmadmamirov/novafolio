@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { initializeFirebaseAdmin } from "../firebase-admin";
 import admin from "firebase-admin"
+import { Post } from "@/utils/types/components";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
  if (req.method === "GET") {
@@ -10,20 +11,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .orderBy('createdAt', 'desc')
       .get();
 
-    const posts : any = [];
+    const posts: Post[]= [];
     postsSnapshot.forEach(doc => {
-      posts.push({ id: doc.id, ...doc.data() });
+      posts.push({ ...doc.data() as Post});
     });
     res.json(posts);
-    } catch (error : any) {
-    console.log(error)
-    res.status(500).send(error.message);
-  }
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.log(error);
+        res.status(500).send(error.message);
+      } else {
+        console.log(error);
+        res.status(500).send('An unknown error occurred');
+      }
+    }
 }
 if (req.method === "POST"){
   const { adminDb } = initializeFirebaseAdmin();
   try {
-    const { title, content, imageUrls = [], tags = [] } = req.body;
+    const { title, content, imageUrls = [], tags = [], thumbNail } = req.body;
     if (!title || !content) {
       return res.status(400).json({ error: 'Title and content are required' });
     }
@@ -38,6 +44,7 @@ if (req.method === "POST"){
       content,
       imageUrls,
       tags,
+      thumbNail,
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
       updatedAt: admin.firestore.FieldValue.serverTimestamp(),
       published: false 
@@ -59,9 +66,14 @@ if (req.method === "POST"){
       createdAt: new Date(),
       updatedAt: new Date()
     });
-  } catch (error) {
-    console.error('Error creating post:', error);
-    res.status(500).json({ error: 'Failed to create post' });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.log(error);
+      res.status(500).send(error.message);
+    } else {
+      console.log(error);
+      res.status(500).send('An unknown error occurred');
+    }
   }
  }
 }

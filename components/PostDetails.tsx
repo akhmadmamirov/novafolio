@@ -1,14 +1,47 @@
 import { useRouter } from "next/router";
-import { posts } from "@/data/posts";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaLongArrowAltLeft } from "react-icons/fa";
+import { Post } from "@/utils/types/components";
 
 const PostDetails: React.FC = () => {
   const router = useRouter();
   const { slug } = router.query;
-  const post = posts.find((p) => p.slug === slug);
+
+  const [post, setPost] = useState<Post | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
   const onClick = () => {
-    router.push("/")
+    router.push("/");
+  };
+
+  useEffect(() => {
+    if (slug) {
+      const fetchPost = async () => {
+        try {
+          const response = await fetch(`/api/posts/${slug}`);
+          if (!response.ok) {
+            throw new Error("Post not found");
+          }
+          const data = await response.json();
+          setPost(data);
+        } catch (error) {
+          setError((error as Error).message);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchPost();
+    }
+  }, [slug]);
+
+  if (loading) {
+    return <div className="text-center text-gray-300">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center text-gray-300">Error: {error}</div>;
   }
 
   if (!post) {
@@ -17,33 +50,31 @@ const PostDetails: React.FC = () => {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric'
+    return date.toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
     });
   };
 
   const formattedContent = post.content
     .replace(/\n\n/g, '<p class="mb-6"></p>')
-    .replace(/\n/g, '<br />');
+    .replace(/\n/g, "<br />");
 
   return (
     <article className="max-w-4xl mx-auto p-6 text-gray-100">
       {/* Header Section */}
-      <button 
-              onClick={onClick}
-              className="inline-flex items-center space-x-2 text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200 mr-2"
-            >
-              <FaLongArrowAltLeft className="w-3 h-3" />
-              <span>Back to the main</span>
-          </button>
+      <button
+        onClick={onClick}
+        className="inline-flex items-center space-x-2 text-sm text-blue-400 hover:text-blue-300 transition-colors duration-200 mr-2"
+      >
+        <FaLongArrowAltLeft className="w-3 h-3" />
+        <span>Back to the main</span>
+      </button>
       <div className="mb-8 mt-3">
-        <h1 className="text-4xl font-bold mb-4 leading-tight">
-          {post.title}
-        </h1>
+        <h1 className="text-4xl font-bold mb-4 leading-tight">{post.title}</h1>
         <div className="flex gap-2 mb-4">
-          {post.tags.map((tag, index) => (
+          {post.tags.map((tag: string, index: number) => (
             <span
               key={index}
               className="px-3 py-1  text-sm bg-gray-700 rounded-full text-gray-300"
@@ -63,7 +94,7 @@ const PostDetails: React.FC = () => {
 
       {/* Featured Image */}
       <div className="mb-10 relative aspect-video w-full overflow-hidden rounded-xl">
-        <Image 
+        <Image
           src={post.thumbNail}
           alt="Article cover image"
           fill
@@ -85,7 +116,7 @@ const PostDetails: React.FC = () => {
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-gray-700 overflow-hidden">
             <Image
-              src="/profile.png" // Add your author avatar path
+              src="/profile.png"
               alt="Author avatar"
               width={48}
               height={48}
@@ -93,12 +124,8 @@ const PostDetails: React.FC = () => {
             />
           </div>
           <div>
-            <div className="font-medium text-gray-200">
-              Akhmadillo Mamirov
-            </div>
-            <div className="text-sm text-gray-400">
-              Software Engineer
-            </div>
+            <div className="font-medium text-gray-200">Akhmadillo Mamirov</div>
+            <div className="text-sm text-gray-400">Software Engineer</div>
           </div>
         </div>
       </div>
