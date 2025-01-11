@@ -1,13 +1,15 @@
 import { withAuth } from "@/components/auth/Protect";
 import { useRouter } from 'next/navigation';
-import { auth } from '@/firebaseConfig';
+import { UseFirebase } from "./hooks/hooks";
 import { toast } from 'react-toastify';
+import ImageUpload from "./ImageUpload";
 
 const AdminEditor = () => {
   const router = useRouter();
 
   const handleLogout = async () => {
     try {
+      const {auth} = UseFirebase();
       await auth.signOut();
       toast.success('Logged out successfully');
       router.push('/login');
@@ -28,7 +30,7 @@ const AdminEditor = () => {
           Logout
         </button>
       </div>
-      {/* Admin editor content goes here */}
+      <ImageUpload folder="images"/>
     </div>
   );
 };

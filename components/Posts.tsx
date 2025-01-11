@@ -1,17 +1,19 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import type { Posts } from "@/utils/types/components";
-import { posts } from "@/data/posts";
-import { FaLongArrowAltRight } from "react-icons/fa";
-import { FaLongArrowAltDown } from "react-icons/fa";
+import { FaLongArrowAltRight, FaLongArrowAltDown } from "react-icons/fa";
+import useFetchPosts from "./hooks/useFetchPosts";
 
 const Posts: React.FC = () => {
   const router = useRouter();
-  
+  const { posts, loading, error } = useFetchPosts();
+
   const handlePostClick = (slug: string) => {
     router.push(`/posts/${slug}`);
   };
+
+  if (loading) return <p>Loading posts...</p>;
+  if (error) return <p>Error loading posts: {error}</p>;
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
@@ -21,11 +23,7 @@ const Posts: React.FC = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {posts.slice(0, 3).map((post) => (
-          <Post
-            key={post.slug}
-            post={post}
-            onClick={() => handlePostClick(post.slug)}
-          />
+          <Post key={post.slug} post={post} onClick={() => handlePostClick(post.slug)} />
         ))}
       </div>
     </div>
@@ -33,7 +31,12 @@ const Posts: React.FC = () => {
 };
 
 type PostProps = {
-  post: Posts[0];
+  post: {
+    slug: string;
+    thumbNail: string;
+    title: string;
+    content: string;
+  };
   onClick: () => void;
 };
 

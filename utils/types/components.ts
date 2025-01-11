@@ -55,7 +55,8 @@ export type Testimonial = {
   logo : string;
 }
 
-type Post = {
+export type Post = {
+  id: string;
   title: string;
   content: string;
   imageURL: string;
