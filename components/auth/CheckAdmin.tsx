@@ -17,6 +17,7 @@ const useAdminCheck = (userId: string) => {
     if (userId) {
       checkAdmin();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
   return isAdmin;
 };

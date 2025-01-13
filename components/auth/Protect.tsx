@@ -19,6 +19,7 @@ export const withAuth = (WrappedComponent: any) => {
       });
 
       return () => unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (loading) {
