@@ -3,8 +3,14 @@ import { sourceCodePro } from '@/utils/fonts';
 import { profile, socials } from '@/data/profile';
 import Image from 'next/image'
 import VisitorCounter from './VisitorCounter';
+import NavBar from './Navbar';
 
-const Header = () => {
+interface HeaderProps {
+  currentPage: string
+  setPageOnClick: (page : string) => void;  
+}
+
+const Header: React.FC<HeaderProps> = ({currentPage, setPageOnClick}) => {
   return (
     <div className="flex flex-col md:flex-row items-center text-center md:text-left gap-20 max-w-4xl w-full">
       <div className="w-48 h-48 relative animate-fade-in-up shrink-0">
@@ -38,6 +44,7 @@ const Header = () => {
               <FontAwesomeIcon icon={social.icon} className="text-green-400" />
             </a>
           ))}
+          <NavBar currentPage={currentPage} setPageOnClick={setPageOnClick}/>
           <VisitorCounter />
         </div>
       </div>
