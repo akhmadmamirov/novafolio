@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://goakhmad.com
+
+# Sitemaps
+Sitemap: https://goakhmad.com/sitemap.xml
