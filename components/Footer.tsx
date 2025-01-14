@@ -23,7 +23,7 @@ const Footer = () => {
           </span>
         </p>
         <p className="text-sm text-white font-medium font-mono">
-          Last updated: Jan 13, 2025
+          Last updated: Jan 14, 2025
         </p>
       </div>
     </footer>

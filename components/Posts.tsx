@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { FaLongArrowAltRight, FaLongArrowAltDown } from "react-icons/fa";
 import useFetchPosts from "./hooks/useFetchPosts";
+import { Loader } from "lucide-react";
+import ErrorDisplay from "./Error";
 
 const Posts: React.FC = () => {
   const router = useRouter();
@@ -12,8 +14,21 @@ const Posts: React.FC = () => {
     router.push(`/posts/${slug}`);
   };
 
-  if (loading) return <p>Loading posts...</p>;
-  if (error) return <p>Error loading posts: {error}</p>;
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center">
+        <Loader size={50} />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center">
+        <ErrorDisplay message="Error fetching posts" />
+      </div>
+    )
+  }
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">

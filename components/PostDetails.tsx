@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { Post } from "@/utils/types/components";
+import Loader from "./Loader";
+import ErrorDisplay from "./Error";
 
 const PostDetails: React.FC = () => {
   const router = useRouter();
@@ -37,11 +39,17 @@ const PostDetails: React.FC = () => {
   }, [slug]);
 
   if (loading) {
-    return <div className="text-center text-gray-300">Loading...</div>;
+    return <div className="fixed inset-0 flex items-center justify-center">
+      <Loader size={50} />
+    </div>;
   }
 
   if (error) {
-    return <div className="text-center text-gray-300">Error: {error}</div>;
+    return (
+      <div className="flex inset-0 items-center justify-center">
+        <ErrorDisplay message="Error fetching posts" />
+      </div>
+    )
   }
 
   if (!post) {

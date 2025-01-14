@@ -5,7 +5,7 @@ interface NavbarProps {
 
 const NavBar: React.FC<NavbarProps> = ({ currentPage, setPageOnClick }) => {
   const buttons = [
-    { label: "Peers", page: "feedback" },
+    { label: "Feedback", page: "feedback" },
     { label: "Experience", page: "experience" },
   ];
 
