@@ -5,6 +5,14 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['firebasestorage.googleapis.com'],
   },
+  async rewrites() {
+    return [
+        {
+            source: '/blog',
+            destination: `${process.env.BLOG_DOMAIN}/blog/welcome`,
+        },
+    ];
+  }
 };
 
 export default nextConfig;
