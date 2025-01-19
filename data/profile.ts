@@ -1,4 +1,4 @@
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faDochub, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import type { Profile, Social } from "../utils/types/components";
 
 export const profile: Profile = {
