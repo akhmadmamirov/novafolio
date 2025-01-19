@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/blog",
-      "destination": "https://novafolio-docs-97ikbyva9-akhmadmamirovs-projects.vercel.app"
-    }
-  ]
-}
