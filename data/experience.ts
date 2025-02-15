@@ -1,20 +1,6 @@
 import type { Experience } from "../utils/types/components";
 export const internshipExperiences: Experience[] = [
   {
-    startDate: "05/2025",
-    endDate: "08/2025",
-    company: "Salesforce",
-    title: "Software Engineer",
-    description: `This summer I will be joining Salesforce as a Software Engineer Intern.
-     I will be working on Public Cloud team based in San Francisco.`,
-    team: "Public Cloud",
-    location: "San Francisco, CA",
-    logoSrc: "/salesforce_logo.png",
-    logoAlt: "Salesforce Logo",
-    skills: ["Go", "K8s", "AWS", "Microservices"],
-    type: "internship",
-  },
-  {
     startDate: "05/2024",
     endDate: "08/2024",
     company: "Electronic Arts",
