@@ -44,11 +44,6 @@ const Header: React.FC<HeaderProps> = ({currentPage, setPageOnClick}) => {
               <FontAwesomeIcon icon={social.icon} className="text-green-400" />
             </a>
           ))}
-          <button className="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-1 px-3 text-sm border border-green-500 hover:border-transparent rounded">
-            <a href="https://amamirov-docs.onrender.com/blog/welcome" target="_blank" rel="noopener noreferrer">
-              Blog
-            </a>
-          </button>
           <NavBar currentPage={currentPage} setPageOnClick={setPageOnClick}/>
           <VisitorCounter />
         </div>
