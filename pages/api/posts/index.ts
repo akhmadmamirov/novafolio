@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { initializeFirebaseAdmin } from "../firebase-admin";
+import { initializeFirebaseAdmin } from "@/utils/firebase-admin";
 import admin from "firebase-admin"
 import { Post } from "@/utils/types/components";
 

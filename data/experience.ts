@@ -1,6 +1,25 @@
 import type { Experience } from "../utils/types/components";
 export const internshipExperiences: Experience[] = [
   {
+    startDate: "05/2025",
+    endDate: "08/2025",
+    company: "Robinhood",
+    title: "Software Engineer",
+    description: `I built and shipped an AI-based role discovery system for AWS and Kubernetes
+    under Security IAM, improving role-permission consistency with hash-based caching (18x faster processing)
+    and reducing synchronization errors. I enhanced search relevance through algorithm refinements,
+    progressive rollouts, and guardrails, while integrating OpenAI API, pgvector, and Braintrust to
+    enable tracing, logging, and user feedback. I strengthened safety with prompt relevance checks
+    to mitigate prompt injection risks and streamlined role allocation to cut overprivileged access and on-call overhead.`,
+    team: "Security Identity and Access Management",
+    location: "Menlo Park, CA",
+    logoSrc: "/robinhood_logo.svg",
+    logoAlt: "Robinhood Logo",
+    images: ["/robinhood_interns.jpeg"],
+    skills: ["Golang", "Typescript", "Kubernetes", "AWS"],
+    type: "internship",
+  },
+  {
     startDate: "05/2024",
     endDate: "08/2024",
     company: "Electronic Arts",

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { initializeFirebaseAdmin } from "./firebase-admin";
+import { initializeFirebaseAdmin } from "@/utils/firebase-admin";
 import { FieldValue } from "firebase-admin/firestore";
 
 export default async function handler(

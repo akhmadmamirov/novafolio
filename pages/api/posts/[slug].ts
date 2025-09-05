@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { initializeFirebaseAdmin } from "../firebase-admin";
+import { initializeFirebaseAdmin } from "@/utils/firebase-admin";
 
 // Get post by slug
 export default async function handler(

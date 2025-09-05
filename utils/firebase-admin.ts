@@ -25,4 +25,4 @@ export const initializeFirebaseAdmin = () => {
 
   const app = getApps()[0];
   return { adminApp: app, adminAuth: getAuth(app), adminDb: getFirestore(app) };
-};
+}; 
