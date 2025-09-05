@@ -6,7 +6,7 @@ export const profile: Profile = {
   description: `Hi, I am Akhmad. Nice to meet you! I enjoy coding, reading, 
   music and sports. Currently, I am working on a scheduler to optimize utilization in multi-GPU systems for AI workloads. In my next role, I want to work on backend, distributed
   systems, compilers, AI, cloud and quantum computing projects.`,
-  image: "/profile.png",
+  image: "/akhmad_mamirov.jpeg",
 }
 
 export const socials: Social[] = [
