@@ -10,7 +10,7 @@ export default function Home() {
           <Header/>
         </div>
         <Profile />
-        <Posts />
+        {/* <Posts /> */}
         <Footer />
       </main>
   );
