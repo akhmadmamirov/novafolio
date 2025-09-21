@@ -5,12 +5,9 @@ export const internshipExperiences: Experience[] = [
     endDate: "08/2025",
     company: "Robinhood",
     title: "Software Engineer",
-    description: `I built and shipped an AI-based role discovery system for AWS and Kubernetes
-    under Security IAM, improving role-permission consistency with hash-based caching (18x faster processing)
-    and reducing synchronization errors. I enhanced search relevance through algorithm refinements,
-    progressive rollouts, and guardrails, while integrating OpenAI API, pgvector, and Braintrust to
-    enable tracing, logging, and user feedback. I strengthened safety with prompt relevance checks
-    to mitigate prompt injection risks and streamlined role allocation to cut overprivileged access and on-call overhead.`,
+    description: `
+      At Robinhood, I built and shipped an AI-based role discovery system for AWS and Kubernetes under Security IAM team. 
+      I worked with Golang, OpenAI API, pgvector, Wiz, and Braintrust.`,
     team: "Security Identity and Access Management",
     location: "Menlo Park, CA",
     logoSrc: "/robinhood_logo.svg",
